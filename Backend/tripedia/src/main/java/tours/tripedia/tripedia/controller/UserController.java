@@ -12,9 +12,11 @@ import tours.tripedia.tripedia.service.UserService;
 import java.util.List;
 import java.util.Optional;
 
+import static tours.tripedia.tripedia.Component.GlobalVariables.crossOriginUrl;
+
 @RestController
 @RequestMapping("api/user")
-@CrossOrigin(origins = "http://frontend")
+@CrossOrigin(origins = crossOriginUrl)
 public class UserController {
     @Autowired
     private UserService userService;
