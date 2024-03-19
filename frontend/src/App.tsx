@@ -8,6 +8,8 @@ import City from "./pages/trip/City";
 import Trip from "./pages/trip/Trip";
 import User from "./pages/user/User";
 import Home from "./pages/homepage/Home";
+import { ThemeProvider } from "@emotion/react";
+import { theme } from "./utils/theme";
 
 const router = createBrowserRouter([
   {
@@ -46,7 +48,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <ThemeProvider theme={theme}>
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  );
 }
 
 export default App;
