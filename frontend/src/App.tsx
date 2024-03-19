@@ -10,10 +10,12 @@ import User from "./pages/user/User";
 import Home from "./pages/homepage/Home";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "./utils/theme";
+import ErrorPage from "./pages/error/ErrorPage";
 
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
