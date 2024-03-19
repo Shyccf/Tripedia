@@ -1,13 +1,13 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
-import AppLayout from "./ui/AppLayout";
-import Blog from "./features/blog/Blog";
-import CreateBlog from "./features/blog/CreateBlog";
-import BlogOverview from "./features/blog/BlogOverview";
-import City from "./features/trip/City";
-import Trip from "./features/trip/Trip";
-import User from "./features/user/User";
-import Home from "./features/homepage/Home";
+import AppLayout from "./components/AppLayout";
+import Blog from "./pages/blog/Blog";
+import CreateBlog from "./pages/blog/CreateBlog";
+import BlogOverview from "./pages/blog/BlogOverview";
+import City from "./pages/trip/City";
+import Trip from "./pages/trip/Trip";
+import User from "./pages/user/User";
+import Home from "./pages/homepage/Home";
 
 const router = createBrowserRouter([
   {
