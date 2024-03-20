@@ -54,6 +54,10 @@ public class ImageService {
     }
 
     public Image updateImage(Image image) {
+        if (image.getImageUrl().isEmpty() || image.getImageUrl() == null) {
+            throw new RuntimeException("Image url can not be empty.");
+        }
+
         if (image.getImageId() == null || !imageDao.existsById(image.getImageId())) {
             throw new RuntimeException("Image Id can not be found");
         }
