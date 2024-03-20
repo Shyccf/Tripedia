@@ -1,8 +1,10 @@
 package tours.tripedia.tripedia.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -30,9 +32,18 @@ public class User implements Serializable {
 
     private String profileBgId;
 
-    /*
-    posts, comments, images
-     */
+    @OneToMany(mappedBy = "user")
+    @JsonIgnoreProperties(value = {"user", "spot", "images", "comments"})
+    List<Post> posts;
+
+    @OneToMany(mappedBy = "user")
+    @JsonIgnoreProperties(value = {"user", "post"})
+    List<Comment> comments;
+
+    @OneToMany(mappedBy = "user")
+    @JsonIgnoreProperties(value = {"user", "post", "spot"})
+    List<Image> images;
+
 
     public User() {
     }
@@ -41,7 +52,7 @@ public class User implements Serializable {
         this.userName = userName;
     }
 
-    public User(String introduction, String city, String userName, String password, String email, String avatarId, Long rating, String profileBgId) {
+    public User(String introduction, String city, String userName, String password, String email, String avatarId, Long rating, String profileBgId, List<Post> posts, List<Comment> comments, List<Image> images) {
         this.introduction = introduction;
         this.city = city;
         this.userName = userName;
@@ -50,11 +61,10 @@ public class User implements Serializable {
         this.avatarId = avatarId;
         this.rating = rating;
         this.profileBgId = profileBgId;
-        /*
         this.posts = posts;
         this.comments = comments;
         this.images = images;
-         */
+
     }
 
     public Long getUserId() {
@@ -137,7 +147,7 @@ public class User implements Serializable {
         this.profileBgId = profileBgId;
     }
 
-    /*
+
     public List<Post> getPosts() {
         return posts;
     }
@@ -161,12 +171,11 @@ public class User implements Serializable {
     public void setImages(List<Image> images) {
         this.images = images;
     }
-     */
 
     @Override
     public String toString() {
 
-        StringBuilder str = new StringBuilder("User{" +
+        String str = "User{" +
                 "userId=" + userId +
                 ", signTime=" + signTime +
                 ", introduction='" + introduction + '\'' +
@@ -176,39 +185,37 @@ public class User implements Serializable {
                 ", email='" + email + '\'' +
                 ", avatarId='" + avatarId + '\'' +
                 ", rating=" + rating +
-                ", profileBgId='" + profileBgId + '\'');
+                ", profileBgId='" + profileBgId + '\'';
 
-        /*
         if (posts == null) {
-            str.append(null);
+            str += null;
         }
         else {
             for (Post post : posts) {
-                str.append(post.getPostId());
+                str += post.getPostId();
             }
         }
 
         if (comments == null) {
-            str.append(null);
+            str += null;
         }
         else {
             for (Comment comment : comments) {
-                str.append(comment.getCommentId());
+                str += comment.getCommentId();
             }
         }
 
         if (images == null) {
-            str.append(null);
+            str += null;
         }
         else {
             for (Image image : images) {
-                str.append(image.getImageId());
+                str += image.getImageId();
             }
         }
 
-         */
-        str.append('}');
+        str += '}';
 
-        return str.toString();
+        return str;
     }
 }
