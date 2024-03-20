@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Entity;
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "spot")
 public class Spot {
@@ -32,7 +34,6 @@ public class Spot {
     @Column(nullable = false, name = "province")
     private String province;
 
-    /*
     @OneToMany(mappedBy = "spot")
     @JsonIgnoreProperties(value = {"spot", "images", "comments", "user"})
     List<Post> posts;
@@ -40,14 +41,13 @@ public class Spot {
     @OneToMany(mappedBy = "spot")
     @JsonIgnoreProperties(value = {"spot", "post", "user"})
     List<Image> images;
-     */
 
     public Spot() {
 
     }
 
     public Spot(Long spotId, String address, Long popularity, String province, String time, String mapUrl,
-                String spotName, String introduction) { // , List<Post> posts, List<Image> images
+                String spotName, String introduction, List<Post> posts, List<Image> images) {
         this.spotId = spotId;
         this.address = address;
         this.popularity = popularity;
@@ -56,8 +56,8 @@ public class Spot {
         this.mapUrl = mapUrl;
         this.province = province;
         this.time = time;
-        // this.posts = posts;
-        // this.images = images;
+        this.posts = posts;
+        this.images = images;
     }
 
     public Long getSpotId() {
@@ -128,7 +128,6 @@ public class Spot {
         this.address = address;
     }
 
-    /*
     public List<Post> getPosts() {
         return posts;
     }
@@ -145,37 +144,33 @@ public class Spot {
         this.images = images;
     }
 
-     */
-
     @Override
     public String toString() {
-        StringBuilder str = new StringBuilder("Spot{" +
+        String str = "Spot{" +
                 "spotId=" + spotId +
                 ", address='" + address + '\'' +
                 ", popularity=" + popularity +
                 ", spotName='" + spotName + '\'' +
-                ", introduction='" + introduction + '\'');
+                ", introduction='" + introduction + '\'';
 
-        /*
         if (posts == null) {
-            str.append(null);
+            str += null;
         } else {
             for (Post post : posts) {
-                str.append(post.getPostId());
+                str += post.getPostId();
             }
         }
 
         if (images == null) {
-            str.append(null);
+            str += null;
         } else {
             for (Image image : images) {
-                str.append(image.getImageId());
+                str += image.getImageId();
             }
         }
-         */
 
-        str.append('}');
+        str += '}';
 
-        return str.toString();
+        return str;
     }
 }
