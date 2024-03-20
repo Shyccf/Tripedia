@@ -58,7 +58,7 @@ public class SpotService {
     }
 
     public Spot updateSpot(Spot spot) {
-        if (spot.getSpotId() == null) {
+        if (spot.getSpotId() == null || !spotDao.existsById(spot.getSpotId())) {
             throw new RuntimeException("Spot can not be found");
         }
 
