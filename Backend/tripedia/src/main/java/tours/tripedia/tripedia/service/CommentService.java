@@ -55,6 +55,10 @@ public class CommentService {
             throw new RuntimeException("Comment text can not be empty");
         }
 
+        if (!commentDao.existsById(comment.getCommentId())) {
+            throw new RuntimeException("Comment does not exist!");
+        }
+
         return commentDao.save(comment);
     }
 
