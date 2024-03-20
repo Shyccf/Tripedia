@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f18f674e-b8f2-4e7b-9861-fd423d6a1536" name="Changes" comment="" />
+    <list default="true" id="f18f674e-b8f2-4e7b-9861-fd423d6a1536" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/tripedia/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/tripedia/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,10 +15,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2dKcRDDjS9MpN5amKy8xKimFr3d" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -26,7 +28,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "shy",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Waterloo/job/projects/Tripedia/Backend/tripedia"
   }
