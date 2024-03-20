@@ -3,7 +3,6 @@ package tours.tripedia.tripedia.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
-import javax.xml.stream.events.Comment;
 import java.util.List;
 
 @Entity
@@ -30,7 +29,6 @@ public class Post {
     @Column(columnDefinition = "text")
     private String content;
 
-    /*
     @ManyToOne
     @JsonIgnoreProperties(value = {"posts", "images"})
     @JoinColumn(name = "spot_id")
@@ -49,14 +47,12 @@ public class Post {
     @JoinColumn(name = "user_id")
     private User user;
 
-     */
-
     public Post() {
 
     }
 
     public Post(boolean isBrief, String tripTime, String postTime, String title, Long visitorNum, Long cost,
-                String content, Spot spot) { // List<Image> images, List<Comment> comments, User user
+                String content, Spot spot, List<Image> images, List<Comment> comments, User user) {
         this.isBrief = isBrief;
         this.tripTime = tripTime;
         this.title = title;
@@ -64,12 +60,10 @@ public class Post {
         this.cost = cost;
         this.content = content;
         this.postTime = postTime;
-        /*
         this.spot = spot;
         this.images = images;
         this.comments = comments;
         this.user = user;
-         */
     }
 
     public Long getPostId() {
@@ -128,7 +122,6 @@ public class Post {
         this.content = content;
     }
 
-    /*
     public Spot getSpot() {
         return spot;
     }
@@ -160,11 +153,10 @@ public class Post {
     public void setUser(User user) {
         this.user = user;
     }
-     */
 
     @Override
     public String toString() {
-        StringBuilder str = new StringBuilder("Post{" +
+        String str = "Post{" +
                 "postId=" + postId +
                 ", isBrief=" + isBrief +
                 ", tripTime=" + tripTime +
@@ -172,40 +164,38 @@ public class Post {
                 ", visitorNum=" + visitorNum +
                 ", postTime=" + postTime +
                 ", cost=" + cost +
-                ", content='" + content + '\'');
+                ", content='" + content + '\'';
 
-        /*
         if (spot == null) {
-            str.append(null);
+            str += null;
         } else {
-            str.append(spot.getSpotId().toString());
+            str += spot.getSpotId().toString();
         }
 
         if (images == null) {
-            str.append(null);
+            str += null;
         } else {
             for (Image image : images) {
-                str.append(image.getImageId());
+                str += image.getImageId();
             }
         }
 
         if (comments == null) {
-            str.append(null);
+            str += null;
         } else {
             for (Comment comment : comments) {
-                str.append(comment.getCommentId());
+                str += comment.getCommentId();
             }
         }
 
         if (user == null) {
-            str.append(null);
+            str += null;
         } else {
-            str.append(user.getUserId().toString());
+            str += user.getUserId().toString();
         }
-         */
 
-        str.append('}');
+        str += '}';
 
-        return str.toString();
+        return str;
     }
 }
