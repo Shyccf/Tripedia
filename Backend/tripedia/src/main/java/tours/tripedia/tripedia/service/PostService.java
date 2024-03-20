@@ -58,8 +58,7 @@ public class PostService {
 
         return postDao.save(post);
     }
-
-    /*
+    
     public Post assignSpot(Long postId, Long spotId) {
         if (!postDao.existsById(postId)) {
             throw new RuntimeException("Cannot find post ID" + postId);
@@ -93,7 +92,6 @@ public class PostService {
         post.setUser(user);
         return postDao.save(post);
     }
-     */
 
     public Post assignContent(Long postId, String content) {
         if (!postDao.existsById(postId)) {
