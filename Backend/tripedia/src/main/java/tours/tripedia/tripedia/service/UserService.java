@@ -98,7 +98,7 @@ public class UserService {
     }
 
     public User updateUser(User user) {
-        if (user.getUserId() == null) {
+        if (user.getUserId() == null || !userDao.existsById(user.getUserId())) {
             throw new RuntimeException("User does not exist!");
         }
 
