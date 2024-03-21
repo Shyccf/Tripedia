@@ -8,10 +8,12 @@ export const theme = createTheme({
       contrastText: "#fafafa",
     },
     secondary: {
-      main: "#00695c",
+      main: "#f9a825",
     },
     background: {
       default: "fafafa",
     },
   },
 });
+
+

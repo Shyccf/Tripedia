@@ -15,8 +15,9 @@ import SearchIcon from "@mui/icons-material/Search";
 import SettingsIcon from "@mui/icons-material/Settings";
 
 import Logo from "/images/logo.svg";
+import { Link, NavLink } from "react-router-dom";
 
-const pages = ["Home", "Trip", "Blog"];
+const pages = ["home", "trip", "blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar() {
@@ -46,6 +47,8 @@ function ResponsiveAppBar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+          {/* md - Logo */}
+
           <Box
             sx={{
               width: 120,
@@ -53,11 +56,15 @@ function ResponsiveAppBar() {
               mt: 1,
               display: { xs: "none", md: "flex" },
             }}
+            component={Link}
+            to="/"
           >
             <img src={Logo} alt="logo" />
           </Box>
 
+          {/* xs - Menu */}
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+            {/* xs - menu icon */}
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -68,6 +75,8 @@ function ResponsiveAppBar() {
             >
               <MenuIcon />
             </IconButton>
+
+            {/* xs - pages director in menu */}
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -87,13 +96,32 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  component={NavLink}
+                  to={page === "home" ? "/" : `/${page}`}
+                  sx={{
+                    "&.active": {
+                      bgcolor: "primary.main", // 激活状态下的背景颜色
+                      color: "primary.contrastText", // 激活状态下的文字颜色
+                    },
+                  }}
+                >
+                  <Typography
+                    textAlign="center"
+                    sx={{
+                      textTransform: "capitalize",
+                    }}
+                  >
+                    {page}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
 
+          {/* xs - logo */}
           <Box
             sx={{
               width: 100,
@@ -103,10 +131,13 @@ function ResponsiveAppBar() {
               mt: 1,
               ml: 2,
             }}
+            component={Link}
+            to="/"
           >
             <img src={Logo} alt="logo" />
           </Box>
 
+          {/* md - pages director  */}
           <Box
             sx={{
               flexGrow: 1,
@@ -120,16 +151,38 @@ function ResponsiveAppBar() {
             }}
           >
             {pages.map((page) => (
+              // <NavLink
+              //   to={page === "home" ? "/" : `/${page}`}
+              //   className={({ isActive }) =>
+              //     isActive ? "active tw-border-b-4" : ""
+              //   }
+              //   key={page}
+              // >
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block", fontSize: 16 }}
+                to={page === "home" ? "/" : `/${page}`}
+                component={NavLink}
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  fontSize: 16,
+                  "&.active::before": {
+                    content: "'*'",
+                    position: "absolute",
+                    left: "-4px",
+                    top: "8px",
+                    color: "secondary.main",
+                  },
+                }}
               >
                 {page}
               </Button>
             ))}
           </Box>
 
+          {/* searching, setting and avatar */}
           <Box
             sx={{
               flexGrow: 0,
