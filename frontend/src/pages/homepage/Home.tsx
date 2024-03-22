@@ -42,7 +42,13 @@ const Home = () => {
     <Container maxWidth="xl">
       <Carousel>
         {slides.map((s) => {
-          return <img src={s.imgPath}  key={s.label} />;
+          return (
+            <img
+              src={s.imgPath}
+              key={s.label}
+              style={{ objectFit: "cover" }}
+            />
+          );
         })}
       </Carousel>
     </Container>

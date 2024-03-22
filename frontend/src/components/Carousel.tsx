@@ -1,8 +1,26 @@
 import { Box, IconButton } from "@mui/material";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import React, { useState } from "react";
 
-const Carousel = ({ children: slides }) => {
+interface CarouselProps {
+  children: JSX.Element[];
+}
+
+const Carousel: React.FC<CarouselProps> = ({ children: slides }) => {
+  const [curPage, setCurPage] = useState(0);
+
+  const prev = () => {
+    const newPage = curPage === 0 ? slides.length - 1 : curPage - 1;
+    console.log(`Prev: ${newPage}`);
+    setCurPage(newPage);
+  };
+
+  const next = () => {
+    const newPage = curPage === slides.length - 1 ? 0 : curPage + 1;
+    console.log(`Next: ${newPage}`);
+    setCurPage(newPage);
+  };
   return (
     <>
       <Box
@@ -13,14 +31,23 @@ const Carousel = ({ children: slides }) => {
           marginTop: 4,
         }}
       >
+        {/* images */}
         <Box
           display="flex"
           alignItems="center"
-          sx={{ objectFit: "cover", maxHeight: 500 }}
+          sx={{
+            maxHeight: 500,
+            transition: "transform 0.5s ease-in-out",
+            transform: `translateX(-${curPage * 100}%) scale(1)`,
+            "&:hover": {
+              transform: "scale(1.1)",
+            },
+          }}
         >
           {slides}
         </Box>
 
+        {/* buttons */}
         <Box
           sx={{
             inset: 0,
@@ -31,7 +58,9 @@ const Carousel = ({ children: slides }) => {
             padding: 2,
           }}
         >
+          {/* prev button */}
           <IconButton
+            onClick={prev}
             aria-label="left button"
             color="primary"
             sx={{
@@ -42,7 +71,10 @@ const Carousel = ({ children: slides }) => {
           >
             <KeyboardArrowLeftIcon />
           </IconButton>
+
+          {/* next button */}
           <IconButton
+            onClick={next}
             aria-label="right button"
             color="primary"
             sx={{
