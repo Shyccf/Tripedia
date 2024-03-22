@@ -1,52 +1,52 @@
 import React from "react";
 import Carousel from "../../components/Carousel";
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 
 const slides = [
   {
-    label: "San Francisco – Oakland Bay Bridge, United States",
-    imgPath: "https://images.unsplash.com/photo-1537944434965-cf4679d1a598",
+    label: "Spring",
+    imgPath:
+      "https://media.cnn.com/api/v1/images/stellar/prod/210316134609-01-wisdom-project-spring.jpg?q=w_4000,h_2250,x_0,y_0,c_fill",
   },
   {
-    label: "Bird",
-    imgPath: "https://images.unsplash.com/photo-1538032746644-0212e812a9e7",
+    label: "Summer",
+    imgPath:
+      "https://www.almanac.com/sites/default/files/styles/or/public/image_nodes/summer-sunset.jpg?itok=fRvO1hlC",
   },
   {
-    label: "Bali, Indonesia",
-    imgPath: "https://images.unsplash.com/photo-1537996194471-e657df975ab4",
+    label: "Autumn",
+    imgPath:
+      "https://i0.wp.com/cms.babbel.news/wp-content/uploads/2020/09/CM_MagazineHeader_FallVsAutumn.png",
   },
   {
-    label: "Goč, Serbia",
-    imgPath: "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8",
+    label: "Winter",
+    imgPath:
+      "https://hips.hearstapps.com/hmg-prod/images/first-day-of-winter-solstice-2021-1638278570.jpg",
   },
   {
-    label: "San Francisco – Oakland Bay Bridge, United States2",
-    imgPath: "https://images.unsplash.com/photo-1537944434965-cf4679d1a598",
-  },
-  {
-    label: "Bird2",
-    imgPath: "https://images.unsplash.com/photo-1538032746644-0212e812a9e7",
-  },
-  {
-    label: "Bali, Indonesia2",
-    imgPath: "https://images.unsplash.com/photo-1537996194471-e657df975ab4",
-  },
-  {
-    label: "Goč, Serbia2",
-    imgPath: "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8",
+    label: "Universe",
+    imgPath:
+      "https://bigthink.com/wp-content/uploads/2021/10/greg-rakozy-oMpAz-DN-9I-unsplash-e1633352959373.jpg",
   },
 ];
 
 const Home = () => {
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="lg">
       <Carousel>
         {slides.map((s) => {
+          // img size min: 1120 x 468
           return (
-            <img
+            <Box
+              component="img"
               src={s.imgPath}
               key={s.label}
-              style={{ objectFit: "cover" }}
+              style={{
+                objectFit: "cover",
+                objectPosition: "center",
+                minWidth: '100%', 
+                minHeight: '100%',
+              }}
             />
           );
         })}
