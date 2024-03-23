@@ -1,13 +1,61 @@
-import './App.css'
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import "./App.css";
+import AppLayout from "./components/AppLayout";
+import Blog from "./pages/blog/Blog";
+import CreateBlog from "./pages/blog/CreateBlog";
+import BlogOverview from "./pages/blog/BlogOverview";
+import City from "./pages/trip/City";
+import Trip from "./pages/trip/Trip";
+import User from "./pages/user/User";
+import Home from "./pages/homepage/Home";
+import { ThemeProvider } from "@emotion/react";
+import { theme } from "./utils/theme";
+import ErrorPage from "./pages/error/ErrorPage";
+
+const router = createBrowserRouter([
+  {
+    element: <AppLayout />,
+    path: "/",
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/user",
+        element: <User />,
+      },
+      {
+        path: "/trip",
+        element: <Trip />,
+      },
+      {
+        path: "/trip/:cityId",
+        element: <City />,
+      },
+      {
+        path: "/blog",
+        element: <BlogOverview />,
+      },
+      {
+        path: "/blog/new",
+        element: <CreateBlog />,
+      },
+      {
+        path: "/blog/:blogId",
+        element: <Blog />,
+      },
+    ],
+  },
+]);
 
 function App() {
-
   return (
-    <>
-      <h1 className='bg-red-200'>Hello World</h1>
-      <h2 className='bg-blue-100'>Test</h2>
-    </>
-  )
+    <ThemeProvider theme={theme}>
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
