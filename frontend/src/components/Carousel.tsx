@@ -3,126 +3,136 @@ import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import React, { useState } from "react";
 
-interface CarouselProps {
-  children: JSX.Element[];
-}
-
-const Carousel: React.FC<CarouselProps> = ({ children: slides }) => {
+const Carousel: React.FC<CarouselProps> = ({ slides }) => {
   const [curPage, setCurPage] = useState(0);
 
-  const prev = () => {
-    const newPage = curPage === 0 ? slides.length - 1 : curPage - 1;
-    console.log(`Prev: ${newPage}`);
-    setCurPage(newPage);
+  const handleNext = () => {
+    setCurPage((prevPage) => (prevPage + 1) % slides.length);
   };
 
-  const next = () => {
-    const newPage = curPage === slides.length - 1 ? 0 : curPage + 1;
-    console.log(`Next: ${newPage}`);
-    setCurPage(newPage);
+  const handlePrev = () => {
+    setCurPage((prevPage) => (prevPage - 1 + slides.length) % slides.length);
   };
+
   return (
-    <>
+    <Box
+      sx={{
+        position: "relative",
+        width: "100%",
+        maxHeight: "65vh",
+        overflow: "hidden",
+        marginTop: "1rem",
+      }}
+    >
       <Box
         sx={{
-          position: "relative",
-          overflow: "hidden",
-          marginTop: 4,
-          maxWidth: "100%",
+          display: "flex",
+          transition: "transform 0.5s ease",
+          transform: `translateX(-${curPage * 100}%)`,
+          height: "100%",
         }}
       >
-        {/* images */}
-        <Box
-          display="flex"
-          alignItems="start"
-          sx={{
-            transition: "transform 0.5s ease-in-out",
-            transform: `translateX(-${curPage * 100}%) scale(1)`,
-            width: "100%",
-            height: 600,
-          }}
-        >
-          {slides}
-        </Box>
-
-        {/* buttons */}
-        <Box
-          sx={{
-            inset: 0,
-            position: "absolute",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: 2,
-          }}
-        >
-          {/* prev button */}
-          <IconButton
-            onClick={prev}
-            aria-label="left button"
-            color="primary"
-            sx={{
-              padding: 0.5,
-              borderRadius: "50%",
-              backgroundColor: "primary.light",
-            }}
-          >
-            <KeyboardArrowLeftIcon />
-          </IconButton>
-
-          {/* next button */}
-          <IconButton
-            onClick={next}
-            aria-label="right button"
-            color="primary"
-            sx={{
-              padding: 0.5,
-              borderRadius: "50%",
-              backgroundColor: "primary.light",
-            }}
-          >
-            <KeyboardArrowRightIcon />
-          </IconButton>
-        </Box>
-
-        {/* small-image navigators */}
-        <Box
-          sx={{
-            position: "absolute",
-            bottom: 6,
-            left: 0,
-            right: 0,
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
+        {slides.map((slide, index) => (
           <Box
+            key={index}
+            component="img"
+            src={slide.imgPath}
             sx={{
-              display: "flex",
-              gap: 2,
-              justifyContent: "center",
-              alignItems: "center",
-              width: 100,
-              height: 60,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center bottom",
             }}
-          >
-            {slides.map((slide, i) =>
-              React.cloneElement(slide, {
-                key: i,
-                style: {
-                  filter: curPage === i ? "" : "grayscale(70%)",
-                  transition: "all 0.5s ease-in-out",
-                  border: curPage === i ? "5px solid red" : "",
-                },
-                onClick: () => {
-                  setCurPage(i);
-                },
-              })
-            )}
-          </Box>
+          />
+        ))}
+      </Box>
+      {/* Left Button */}
+      <IconButton
+        color="primary"
+        sx={{
+          position: "absolute",
+          top: "50%",
+          left: 16,
+          transform: "translateY(-50%)",
+          padding: 0.5,
+          borderRadius: "50%",
+          backgroundColor: "primary.light",
+          zIndex: 2,
+        }}
+        onClick={handlePrev}
+      >
+        <KeyboardArrowLeftIcon />
+      </IconButton>
+      {/* Right Button */}
+      <IconButton
+        color="primary"
+        sx={{
+          position: "absolute",
+          top: "50%",
+          right: 16,
+          transform: "translateY(-50%)",
+          padding: 0.5,
+          borderRadius: "50%",
+          backgroundColor: "primary.light",
+          zIndex: 2,
+        }}
+        onClick={handleNext}
+      >
+        <KeyboardArrowRightIcon />
+      </IconButton>
+
+      {/* small-image navigators */}
+      <Box
+        sx={{
+          position: "absolute",
+          // left: 0,
+          top: "0",
+          right: "10%", // 使用百分比或视口单位来实现响应式布局
+          bottom: "0", // 调整导航器在轮播图内的位置
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            gap: {
+              xs: 0.5,
+              md: 1,
+              lg: 1.5,
+            },
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            maxWidth: {
+              xs: "3rem",
+              md: "5rem",
+              lg: "6rem",
+            },
+            maxHeight: "2rem",
+          }}
+        >
+          {slides.map((slide, index) => (
+            <Box
+              key={index}
+              component="img"
+              src={slide.imgPath}
+              sx={{
+                width: "auto",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center",
+                filter: curPage === index ? "" : "grayscale(70%)",
+                transition: "all 0.5s ease-in-out",
+                border: curPage === index ? "5px solid red" : "",
+              }}
+              onClick={() => setCurPage(index)}
+            />
+          ))}
         </Box>
       </Box>
-    </>
+    </Box>
   );
 };
 

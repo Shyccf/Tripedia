@@ -1,6 +1,6 @@
 import React from "react";
 import Carousel from "../../components/Carousel";
-import { Box, Container } from "@mui/material";
+import {Container } from "@mui/material";
 
 const slides = [
   {
@@ -33,24 +33,7 @@ const slides = [
 const Home = () => {
   return (
     <Container maxWidth="lg">
-      <Carousel>
-        {slides.map((s) => {
-          // img size min: 1120 x 468
-          return (
-            <Box
-              component="img"
-              src={s.imgPath}
-              key={s.label}
-              style={{
-                objectFit: "cover",
-                objectPosition: "center",
-                minWidth: '100%', 
-                minHeight: '100%',
-              }}
-            />
-          );
-        })}
-      </Carousel>
+      <Carousel slides={slides} />
     </Container>
   );
 };
