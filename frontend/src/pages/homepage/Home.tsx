@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "../../components/Carousel";
-import {Container } from "@mui/material";
+import { Container, Grid } from "@mui/material";
+import HotSpot from "./HotSpot";
 
 const slides = [
   {
@@ -32,8 +33,17 @@ const slides = [
 
 const Home = () => {
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" sx={{ border: "4px red solid" }}>
       <Carousel slides={slides} />
+
+      <Grid container columnSpacing={2} marginTop={6}>
+        <Grid item xs={6} md={3}>
+          <HotSpot />
+        </Grid>
+        <Grid item xs={6} md={9}>
+          <div>Hot Blogs</div>
+        </Grid>
+      </Grid>
     </Container>
   );
 };
