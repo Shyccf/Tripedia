@@ -1,5 +1,6 @@
 import React from "react";
 import SpotTag from "../../components/SpotTag";
+import { Box, Button, Typography } from "@mui/material";
 
 const hotSpots = [
   {
@@ -22,7 +23,14 @@ const hotSpots = [
 const HotSpot = () => {
   return (
     <>
-      <div>HotSpot</div>
+      <Box>
+        <Typography variant="h6" component="h2" color="primary.main">
+          Hot Spots
+        </Typography>
+        <Button variant="text">
+          Learn More
+        </Button>
+      </Box>
       <SpotTag hotSpots={hotSpots} />
     </>
   );
