@@ -38,10 +38,10 @@ const Home = () => {
       <Carousel slides={slides} />
 
       <Grid container columnSpacing={12} marginTop={6}>
-        <Grid item xs={6} md={4}>
+        <Grid item xs={4} md={4}>
           <HotSpots />
         </Grid>
-        <Grid item xs={6} md={8}>
+        <Grid item xs={8} md={8}>
           <HotPosts />
         </Grid>
       </Grid>
