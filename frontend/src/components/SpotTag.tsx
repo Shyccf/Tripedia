@@ -3,7 +3,7 @@ import React from "react";
 
 const SpotTag: React.FC<HotSpotsProps> = ({ hotSpots }) => {
   return (
-    <>
+    <div>
       {hotSpots.map((hotSpot) => (
         <Paper
           key={hotSpot.name}
@@ -48,7 +48,7 @@ const SpotTag: React.FC<HotSpotsProps> = ({ hotSpots }) => {
           </Typography>
         </Paper>
       ))}
-    </>
+    </div>
   );
 };
 

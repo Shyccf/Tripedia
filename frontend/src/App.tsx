@@ -1,9 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
 import AppLayout from "./components/AppLayout";
-import Blog from "./pages/blog/Blog";
-import CreateBlog from "./pages/blog/CreateBlog";
-import BlogOverview from "./pages/blog/BlogOverview";
 import City from "./pages/trip/City";
 import Trip from "./pages/trip/Trip";
 import User from "./pages/user/User";
@@ -11,6 +8,9 @@ import Home from "./pages/homepage/Home";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "./utils/theme";
 import ErrorPage from "./pages/error/ErrorPage";
+import Post from "./pages/post/Post";
+import CreatePost from "./pages/post/CreatePost";
+import PostOverview from "./pages/post/PostOverview";
 
 const router = createBrowserRouter([
   {
@@ -35,16 +35,16 @@ const router = createBrowserRouter([
         element: <City />,
       },
       {
-        path: "/blog",
-        element: <BlogOverview />,
+        path: "/post",
+        element: <PostOverview />,
       },
       {
-        path: "/blog/new",
-        element: <CreateBlog />,
+        path: "/post/new",
+        element: <CreatePost />,
       },
       {
-        path: "/blog/:blogId",
-        element: <Blog />,
+        path: "/post/:postId",
+        element: <Post />,
       },
     ],
   },

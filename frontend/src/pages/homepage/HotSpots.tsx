@@ -20,9 +20,9 @@ const hotSpots = [
   },
 ];
 
-const HotSpot = () => {
+const HotSpots = () => {
   return (
-    <>
+    <div>
       <Box
         sx={{
           display: "flex",
@@ -35,14 +35,14 @@ const HotSpot = () => {
         </Typography>
         <Button
           variant="text"
-          sx={{ color: "primary.dark", fontSize: "0.8rem" }}
+          sx={{ color: "primary.dark", fontSize: "0.7rem" }}
         >
           Learn More
         </Button>
       </Box>
       <SpotTag hotSpots={hotSpots} />
-    </>
+    </div>
   );
 };
 
-export default HotSpot;
+export default HotSpots;
