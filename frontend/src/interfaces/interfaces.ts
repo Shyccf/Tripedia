@@ -15,3 +15,17 @@ interface HotSpot {
 interface HotSpotsProps {
   hotSpots: HotSpot[];
 }
+
+interface Post {
+  title: string;
+  content: string;
+  location: string;
+  author: string;
+  date: string;
+  views: string;
+  likes: string;
+}
+
+interface PostProps {
+  post: Post;
+}

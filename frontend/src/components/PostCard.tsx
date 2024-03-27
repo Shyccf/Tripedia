@@ -4,8 +4,9 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import CreateIcon from "@mui/icons-material/Create";
+import React from "react";
 
-const PostCard = () => {
+const PostCard: React.FC<PostProps> = ({ post }) => {
   return (
     <Paper
       elevation={3}
@@ -28,7 +29,7 @@ const PostCard = () => {
             xs: "16rem",
             md: "auto",
           },
-          backgroundImage: `url("https://travel.usnews.com/images/Istvan_Kadar_Photographycity-skyline-buidings-cn-tower.jpg")`,
+          backgroundImage: `url("${post.imgPath}")`,
           backgroundSize: "cover",
           borderRadius: "0.3rem",
         }}
@@ -46,12 +47,10 @@ const PostCard = () => {
         {/* title and content */}
         <Box>
           <Typography variant="h5" component="h3">
-            CN Towers
+            {post.title}
           </Typography>
           <Typography marginY={2} marginX={2}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non
-            tempor libero. Pellentesque habitant morbi tristique senectus et
-            netus et malesuada...
+            {post.content}
           </Typography>
         </Box>
 
@@ -81,7 +80,7 @@ const PostCard = () => {
               }}
             >
               <PlaceIcon color="primary" />
-              <Typography>Toronto, Canada</Typography>
+              <Typography>{post.location}</Typography>
             </Box>
 
             {/* author */}
@@ -94,7 +93,7 @@ const PostCard = () => {
               }}
             >
               <CreateIcon color="primary" />
-              <Typography>Kyrie</Typography>
+              <Typography>{post.author}</Typography>
             </Box>
 
             {/* date */}
@@ -107,7 +106,7 @@ const PostCard = () => {
               }}
             >
               <AccessTimeIcon color="primary" />
-              <Typography>03/27/2024</Typography>
+              <Typography>{post.date}</Typography>
             </Box>
           </Box>
 
@@ -122,7 +121,7 @@ const PostCard = () => {
               }}
             >
               <VisibilityIcon color="primary" />
-              <Typography>500</Typography>
+              <Typography>{post.views}</Typography>
             </Box>
             <Box
               sx={{
@@ -133,7 +132,7 @@ const PostCard = () => {
               }}
             >
               <ThumbUpOffAltIcon color="primary" />
-              <Typography>66</Typography>
+              <Typography>{post.likes}</Typography>
             </Box>
           </Box>
         </Box>
