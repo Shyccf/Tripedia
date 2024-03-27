@@ -23,11 +23,20 @@ const hotSpots = [
 const HotSpot = () => {
   return (
     <>
-      <Box>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "baseline",
+        }}
+      >
         <Typography variant="h6" component="h2" color="primary.main">
           Hot Spots
         </Typography>
-        <Button variant="text">
+        <Button
+          variant="text"
+          sx={{ color: "primary.dark", fontSize: "0.8rem" }}
+        >
           Learn More
         </Button>
       </Box>
