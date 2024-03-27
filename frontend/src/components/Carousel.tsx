@@ -19,11 +19,13 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
       sx={{
         position: "relative",
         width: "100%",
-        maxHeight: "65vh",
+        maxHeight: "60vh",
         overflow: "hidden",
         marginTop: "1rem",
+        border: "4px red solid",
       }}
     >
+      {/* Images */}
       <Box
         sx={{
           display: "flex",
