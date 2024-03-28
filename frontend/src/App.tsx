@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         element: <User />,
       },
       {
-        path: "/trip",
+        path: "/explore",
         element: <Trip />,
       },
       {

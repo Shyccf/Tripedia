@@ -17,7 +17,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import Logo from "/images/logo.svg";
 import { Link, NavLink } from "react-router-dom";
 
-const pages = ["home", "trip", "blog"];
+const pages = ["home", "explore", "post"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar() {
