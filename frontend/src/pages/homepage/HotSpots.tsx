@@ -40,7 +40,10 @@ const HotSpots = () => {
           Learn More
         </Button>
       </Box>
-      <SpotTag hotSpots={hotSpots} />
+
+      {hotSpots.map((hotSpot) => (
+        <SpotTag hotSpot={hotSpot} />
+      ))}
     </div>
   );
 };

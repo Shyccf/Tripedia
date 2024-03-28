@@ -12,8 +12,8 @@ interface HotSpot {
   imgPath: string;
 }
 
-interface HotSpotsProps {
-  hotSpots: HotSpot[];
+interface HotSpotProps {
+  hotSpot: HotSpot;
 }
 
 interface Post {

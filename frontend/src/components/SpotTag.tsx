@@ -1,10 +1,9 @@
 import { Box, Paper, Typography } from "@mui/material";
 import React from "react";
 
-const SpotTag: React.FC<HotSpotsProps> = ({ hotSpots }) => {
+const SpotTag: React.FC<HotSpotProps> = ({ hotSpot }) => {
   return (
     <div>
-      {hotSpots.map((hotSpot) => (
         <Paper
           key={hotSpot.name}
           elevation={5}
@@ -47,7 +46,6 @@ const SpotTag: React.FC<HotSpotsProps> = ({ hotSpots }) => {
             {hotSpot.name}
           </Typography>
         </Paper>
-      ))}
     </div>
   );
 };
