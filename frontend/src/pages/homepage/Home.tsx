@@ -37,7 +37,7 @@ const Home = () => {
     <Container maxWidth="lg" sx={{ border: "4px red solid" }}>
       <Carousel slides={slides} />
 
-      <Grid container columnSpacing={12} marginTop={6}>
+      <Grid container columnSpacing={8} marginTop={6}>
         <Grid item xs={4} md={4}>
           <HotSpots />
         </Grid>

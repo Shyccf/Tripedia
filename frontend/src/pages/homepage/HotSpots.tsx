@@ -27,11 +27,17 @@ const HotSpots = () => {
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          alignItems: "baseline",
+          alignItems: "center",
+          marginTop: "6px",
         }}
       >
-        <Typography variant="h6" component="h2" color="primary.main">
-          Hot Spots
+        <Typography
+          variant="h6"
+          component="h2"
+          color="primary.main"
+          sx={{ textTransform: "uppercase" }}
+        >
+          Hottest Spots
         </Typography>
         <Button
           variant="text"
