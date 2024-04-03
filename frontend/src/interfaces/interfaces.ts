@@ -5,6 +5,8 @@ interface Slide {
 
 interface CarouselProps {
   slides: Slide[];
+  buttons?: boolean;
+  thumbnail?: boolean;
 }
 
 interface HotSpot {
