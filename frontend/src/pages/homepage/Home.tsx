@@ -34,18 +34,19 @@ const slides = [
 
 const Home = () => {
   return (
-    <Container maxWidth="lg" sx={{ border: "4px red solid" }}>
+    <>
       <Carousel slides={slides} />
-
-      <Grid container columnSpacing={8} marginTop={6}>
-        <Grid item xs={4} md={4}>
-          <HotSpots />
+      <Container maxWidth="lg" sx={{ border: "4px red solid" }}>
+        <Grid container columnSpacing={8} marginTop={6}>
+          <Grid item xs={4} md={4}>
+            <HotSpots />
+          </Grid>
+          <Grid item xs={8} md={8}>
+            <HotPosts />
+          </Grid>
         </Grid>
-        <Grid item xs={8} md={8}>
-          <HotPosts />
-        </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </>
   );
 };
 

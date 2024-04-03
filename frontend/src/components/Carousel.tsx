@@ -19,10 +19,10 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
       sx={{
         position: "relative",
         width: "100%",
-        maxHeight: "60vh",
+        height: "70vh",
         overflow: "hidden",
-        marginTop: "1rem",
-        border: "4px red solid",
+        // marginTop: "2rem",
+        // border: "4px red solid",
       }}
     >
       {/* Images */}
@@ -31,23 +31,25 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
           display: "flex",
           transition: "transform 0.5s ease",
           transform: `translateX(-${curPage * 100}%)`,
+          width: "100%",
           height: "100%",
         }}
       >
         {slides.map((slide, index) => (
           <Box
             key={index}
-            component="img"
-            src={slide.imgPath}
             sx={{
               width: "100%",
               height: "100%",
-              objectFit: "cover",
-              objectPosition: "center bottom",
+              flexShrink: 0,
+              backgroundImage: `url(${slide.imgPath})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center 60%",
             }}
           />
         ))}
       </Box>
+
       {/* Left Button */}
       <IconButton
         color="primary"
