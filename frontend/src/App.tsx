@@ -1,8 +1,8 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
 import AppLayout from "./components/AppLayout";
-import City from "./pages/trip/City";
-import Trip from "./pages/trip/Trip";
+import City from "./pages/explore/City";
+import Trip from "./pages/explore/Trip";
 import User from "./pages/user/User";
 import Home from "./pages/homepage/Home";
 import { ThemeProvider } from "@emotion/react";
