@@ -1,8 +1,12 @@
-import React from 'react'
+import { Box, Container } from '@mui/material'
+import Carousel from '../../components/Carousel'
 
 const Trip = () => {
   return (
-    <div>Explore</div>
+    <Box sx={{ marginTop: "100px", borderTop: "2px solid white" }}>
+      <Container maxWidth="lg" >
+      </Container>
+    </Box>
   )
 }
 
