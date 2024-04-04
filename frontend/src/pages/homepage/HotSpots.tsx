@@ -48,7 +48,7 @@ const HotSpots = () => {
       </Box>
 
       {hotSpots.map((hotSpot) => (
-        <SpotTag hotSpot={hotSpot} />
+        <SpotTag hotSpot={hotSpot} key={hotSpot.name}/>
       ))}
     </div>
   );
