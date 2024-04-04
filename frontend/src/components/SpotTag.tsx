@@ -6,7 +6,7 @@ const SpotTag: React.FC<HotSpotProps> = ({ hotSpot }) => {
     <div>
         <Paper
           key={hotSpot.name}
-          elevation={5}
+          elevation={0}
           sx={{
             marginY: "1rem",
             borderRadius: "1rem",
