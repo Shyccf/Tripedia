@@ -3,7 +3,7 @@ import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import React, { useState } from "react";
 
-const Carousel: React.FC<CarouselProps> = ({ slides, buttons=true, thumbnail=true }) => {
+const Carousel: React.FC<CarouselProps> = ({ slides, height="70vh",  buttons=true, thumbnail=true }) => {
   const [curPage, setCurPage] = useState(0);
 
   const handleNext = () => {
@@ -19,7 +19,7 @@ const Carousel: React.FC<CarouselProps> = ({ slides, buttons=true, thumbnail=tru
       sx={{
         position: "relative",
         width: "100%",
-        height: "70vh",
+        height,
         overflow: "hidden",
         // marginTop: "2rem",
         // border: "4px red solid",
