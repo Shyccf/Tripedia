@@ -1,6 +1,6 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import PostCard from "../../components/PostCard";
-import { posts } from "../../data/hotposts.js";
+import { posts } from "../../data/posts.js";
 
 const HotPosts = () => {
   return (
@@ -55,7 +55,7 @@ const HotPosts = () => {
         </Button>
       </Box>
 
-      {posts.map((post) => (
+      {posts.map((post: Post) => (
         <PostCard post={post} key={post.title} />
       ))}
     </div>
