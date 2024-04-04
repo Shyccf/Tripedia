@@ -67,3 +67,43 @@ export const hotSpotTags = [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Ch%C3%A2teau_Frontenac%2C_Quebec_city%2C_Canada.jpg/1200px-Ch%C3%A2teau_Frontenac%2C_Quebec_city%2C_Canada.jpg",
   },
 ];
+
+export const themeTags = [
+  {
+    title: "Historical Sites",
+    imgPath: "https://media.nomadicmatt.com/historical-stonehenge.jpg",
+  },
+  {
+    title: "Cultural Landscapes",
+    imgPath:
+      "https://assets.ltkcontent.com/images/88905/Paris-France_27c5571306.jpg",
+  },
+  {
+    title: "National Parks",
+    imgPath: "https://midearth.ca/zoom-admin/upload/product/b_1462516503.jpg",
+  },
+  {
+    title: "Beaches",
+    imgPath:
+      "https://aebc975c.rocketcdn.me/wp-content/uploads/2020/12/plage.jpg",
+  },
+  {
+    title: "Stargazing Spots",
+    imgPath:
+      "https://cdn.outsideonline.com/wp-content/uploads/2023/05/stars-warnervalley-overlook_s_.jpg",
+  },
+  {
+    title: "Mountains",
+    imgPath: "https://media.timeout.com/images/106041640/image.jpg",
+  },
+  {
+    title: "Shopping",
+    imgPath:
+      "https://www.chapmantaylor.com/uploads/Wuyue-Plaza-shopping-mall-in-Urumqifloating-city.jpg",
+  },
+  {
+    title: "Cuisines",
+    imgPath:
+      "https://recipes.net/wp-content/uploads/2024/01/how-to-eat-like-the-chinese-1706185930.jpg",
+  },
+];

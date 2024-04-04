@@ -2,6 +2,7 @@ import { Box, Container } from "@mui/material";
 import Carousel from "../../components/Carousel.js";
 import { slides } from "../../data/slides.js";
 import TopPlaces from "./TopPlaces.js";
+import FeaturedThemes from "./FeaturedThemes.js";
 
 const Explore = () => {
   return (
@@ -9,6 +10,7 @@ const Explore = () => {
       <Container maxWidth="lg">
         <Carousel slides={slides} thumbnail={false} height={"50vh"} />
         <TopPlaces />
+        <FeaturedThemes />
       </Container>
     </Box>
   );

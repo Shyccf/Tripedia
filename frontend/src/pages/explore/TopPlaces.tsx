@@ -20,7 +20,7 @@ const TopPlaces = () => {
         align="center"
         mt={10}
       >
-        Top Places in 2023
+        Top Canadian Places in 2023
       </Typography>
       <Box
         sx={{

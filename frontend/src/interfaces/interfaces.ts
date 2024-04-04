@@ -10,13 +10,13 @@ interface CarouselProps {
   thumbnail?: boolean;
 }
 
-interface HotSpotTags {
+interface HotSpotTag {
   name: string;
   imgPath: string;
 }
 
 interface HotSpotProps {
-  hotSpot: HotSpotTags;
+  hotSpot: HotSpotTag;
 }
 
 interface Post {
@@ -42,4 +42,13 @@ interface Spot {
 
 interface SpotProps {
   spot: Spot;
+}
+
+interface ThemeTag {
+  title: string;
+  imgPath: string;
+}
+
+interface ThemeTagsProps {
+  themeTag: ThemeTag;
 }
