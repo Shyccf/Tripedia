@@ -28,29 +28,27 @@ const TopPlaces = () => {
           flexWrap: "wrap",
           justifyContent: "space-around",
           gap: 2,
-          marginTop: 2,
+          marginTop: 4,
         }}
       >
-        <>
-          <Swiper
-            effect={"cards"}
-            grabCursor={true}
-            modules={[EffectCards]}
-            className="mySwiper"
-            cardsEffect={{
-              rotate: true, // 启用旋转
-              slideShadows: true, // 启用滑动阴影
-              perSlideOffset: 20,
-              perSlideRotate: 4
-            }}
-          >
-            {spots.map((spot) => (
-              <SwiperSlide key={spot.title}>
-                <SpotCard spot={spot} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </>
+        <Swiper
+          effect={"cards"}
+          grabCursor={true}
+          modules={[EffectCards]}
+          className="mySwiper"
+          cardsEffect={{
+            rotate: true, // 启用旋转
+            slideShadows: true, // 启用滑动阴影
+            perSlideOffset: 20,
+            perSlideRotate: 4,
+          }}
+        >
+          {spots.map((spot) => (
+            <SwiperSlide key={spot.title}>
+              <SpotCard spot={spot} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </Box>
     </Box>
   );
