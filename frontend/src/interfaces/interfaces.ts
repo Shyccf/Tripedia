@@ -5,6 +5,7 @@ interface Slide {
 
 interface CarouselProps {
   slides: Slide[];
+  height?: number | string;
   buttons?: boolean;
   thumbnail?: boolean;
 }
