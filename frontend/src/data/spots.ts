@@ -16,16 +16,37 @@ export const spots = [
   {
     title: "Toronto City Hall",
     brief:
-      "Toronto City Hall is the seat of municipal government and corporate head office for Canada's largest city. Its stunning, modernist architecture also makes ...",
+      "Toronto City Hall is the seat of municipal government and corporate head office for Canada's largest city. Its stunning, modernist architecture also makes ..",
     imgPath:
       "https://ak-d.tripcdn.com/images/1i60832349lac91iaFC8E.jpg?proc=source/trip",
   },
   {
-    title: "Toronto City Hall2",
+    title: "Banff National Park",
     brief:
-      "Toronto City Hall is the seat of municipal government and corporate head office for Canada's largest city. Its stunning, modernist architecture also makes ...",
+      "Explore Canada's first national park. Rocky Mountain peaks, turquoise glacial lakes, wildlife and a picture-perfect mountain town.",
     imgPath:
-      "https://ak-d.tripcdn.com/images/1i60832349lac91iaFC8E.jpg?proc=source/trip",
+      "https://traveldudes.com/wp-content/uploads/2021/11/Lake-Louise.jpg",
+  },
+  {
+    title: "Stanley Park",
+    brief:
+      "Ideally situated on a peninsula at the northwestern edge of downtown Vancouver, Stanley Park is one of the city's main tourist destinations, attracting approximately 8 million visitors each year. Featuring lovely beaches, miles of well-maintained paved and dirt trails, and an array of can't-miss kid-friendly spots (including a pool, water park, miniature railway and more), this 400-hectare (1,000-acre) haven is recognized as one of the greatest urban parks in the world.",
+    imgPath:
+      "https://i0.wp.com/vancouversbestplaces.com/wp-content/uploads/2020/08/Stanley-Park-Lighthouse-by-On-the-Mark-Drone-Services.jpg?resize=640%2C353&ssl=1",
+  },
+  {
+    title: "Notre-Dame Basilica",
+    brief:
+      "Montreal's oldest Catholic church, built in 1656, is known for its intricately designed interior, which includes stained glass chronicling the history of the city.",
+    imgPath:
+      "https://media.cntraveler.com/photos/5b8035d61e495553cdef14c3/16:9/w_2560,c_limit/Notre-Dame-Basilica-_GettyImages-624753712.jpg",
+  },
+  {
+    title: "CN Tower",
+    brief:
+      "Defining the Toronto skyline at 553.33m (1,815ft 5in) the CN Tower is Canada's most recognizable and celebrated icon. The CN Tower is an internationally renowned architectural triumph, an engineering Wonder of the Modern World, world-class entertainment and dining destination and a must see for anyone visiting Toronto. Each year, over 1.9 million people visit Canada’s National Tower to take in the breathtaking views and enjoy all the CN Tower has to offer.",
+    imgPath:
+      "https://travel.usnews.com/images/Istvan_Kadar_Photographycity-skyline-buidings-cn-tower.jpg",
   },
 ];
 
