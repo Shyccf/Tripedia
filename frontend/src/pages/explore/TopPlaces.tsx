@@ -37,8 +37,8 @@ const TopPlaces = () => {
           modules={[EffectCards]}
           className="mySwiper"
           cardsEffect={{
-            rotate: true, // 启用旋转
-            slideShadows: true, // 启用滑动阴影
+            rotate: true, 
+            slideShadows: true,
             perSlideOffset: 20,
             perSlideRotate: 4,
           }}
