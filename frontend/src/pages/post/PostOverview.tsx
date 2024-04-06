@@ -1,9 +1,9 @@
 import React from 'react'
 
-const BlogOverview = () => {
+const PostOverview = () => {
   return (
     <div>BlogOverview</div>
   )
 }
 
-export default BlogOverview
+export default PostOverview

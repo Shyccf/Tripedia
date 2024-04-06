@@ -14,3 +14,13 @@ ul {
 a {
   text-decoration: none,
 }
+
+/* swiper - cards */
+.swiper {
+  width: 300px;
+  height: 400px;
+}
+
+.swiper-slide {
+  border-radius: 10px;
+}

@@ -7,29 +7,51 @@ import { Box, Button, IconButton } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 
-const SpotCard = () => {
+const SpotCard: React.FC<SpotProps> = ({ spot }) => {
+  const titleLen = spot.title.length;
+  const title =
+    titleLen > 20 ? spot.title.substring(0, 20) + "..." : spot.title;
+
+  const briefLen = spot.brief.length;
+  const brief =
+    briefLen > 160 ? spot.brief.substring(0, 140) + "..." : spot.brief;
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card
+      sx={{
+        width: 300,
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       <CardMedia
         component="img"
         alt="green iguana"
         sx={{
-          width: "20rem",
-          height: "8rem",
+          width: "100%",
+          height: "20vh",
           objectFit: "cover",
-        }} 
-        image="https://upload.wikimedia.org/wikipedia/commons/a/ab/3Falls_Niagara.jpg"
+          objectPosition: "bottom",
+        }}
+        image={spot.imgPath}
       />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Niagara Falls
+      <CardContent
+        sx={{
+          flexGrow: 1,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-evenly",
+        }}
+      >
+        <Typography gutterBottom variant={"h5"} component="h3">
+          {title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          A stunning natural wonder at the border of USA and Canada, Niagara
-          Falls captivates visitors with its powerful beauty and thunderous
-          waters.
+          {brief}
         </Typography>
       </CardContent>
+
       <CardActions
         sx={{
           display: "flex",
@@ -46,9 +68,7 @@ const SpotCard = () => {
             <ShareIcon />
           </IconButton>
         </Box>
-        <Button variant="text">
-          Learn More
-        </Button>
+        <Button variant="text">Learn More</Button>
       </CardActions>
     </Card>
   );
