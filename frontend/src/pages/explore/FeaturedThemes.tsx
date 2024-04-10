@@ -4,7 +4,7 @@ import { themeTags } from "../../data/spots";
 
 const FeaturedThemes = () => {
   return (
-    <>
+    <Box>
       <Typography
         component={"h2"}
         variant={"h4"}
@@ -39,7 +39,7 @@ const FeaturedThemes = () => {
           <ThemeTag themeTag={themeTag} key={themeTag.title} />
         ))}
       </Box>
-    </>
+    </Box>
   );
 };
 
