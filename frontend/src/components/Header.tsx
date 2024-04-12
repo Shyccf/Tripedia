@@ -103,8 +103,8 @@ function ResponsiveAppBar() {
                   to={page === "home" ? "/" : `/${page}`}
                   sx={{
                     "&.active": {
-                      bgcolor: "primary.main", // 激活状态下的背景颜色
-                      color: "primary.contrastText", // 激活状态下的文字颜色
+                      bgcolor: "primary.main", 
+                      color: "primary.contrastText", 
                     },
                   }}
                 >
