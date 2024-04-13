@@ -42,6 +42,7 @@ const SpotTag: React.FC<HotSpotProps> = ({ hotSpot }) => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            textAlign: "center",  // make text in the center 
             pointerEvents: "none", // The pointer-events CSS property sets under what circumstances (if any) a particular graphic element can become the target of pointer events.
           }}
         >
