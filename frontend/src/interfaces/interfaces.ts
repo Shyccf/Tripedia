@@ -52,3 +52,9 @@ interface ThemeTag {
 interface ThemeTagsProps {
   themeTag: ThemeTag;
 }
+
+interface RegionRowProps {
+  country?: string;
+  province?: string;
+  regions: string[];
+}
